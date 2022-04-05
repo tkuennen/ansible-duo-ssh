@@ -83,19 +83,19 @@
     line: 'ForceCommand /usr/sbin/login_duo_multi'
   become: true
 
-- name: Disable ssh PermitTunnel
-  lineinfile:
-    dest: /etc/ssh/sshd_config
-    regexp: '^PermitTunnel'
-    line: 'PermitTunnel no'
-  become: true
+#- name: Disable ssh PermitTunnel
+#  lineinfile:
+#   dest: /etc/ssh/sshd_config
+#    regexp: '^PermitTunnel'
+#    line: 'PermitTunnel no'
+#  become: true
 
-- name: Disable ssh AllowTcpForwarding
-  lineinfile:
-    dest: /etc/ssh/sshd_config
-    regexp: '^AllowTcpForwarding'
-    line: 'AllowTcpForwarding no'
-  become: true
+#- name: Disable ssh AllowTcpForwarding
+#  lineinfile:
+#    dest: /etc/ssh/sshd_config
+#    regexp: '^AllowTcpForwarding'
+#    line: 'AllowTcpForwarding no'
+#  become: true
 
 - name: Restart ssh
   service: name=sshd state=restarted
